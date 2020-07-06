@@ -1,0 +1,68 @@
+body {
+  font-family: $global-font-family;
+  font-size: $global-font-size;
+  font-weight: 400;
+  line-height: $global-line-height;
+  color: $global-font-color;
+  -webkit-text-size-adjust: 100%;
+  background-color: $global-background-color;
+}
+
+a {
+  color: $global-link-color;
+  text-decoration: none;
+  transition: all .2s ease-in-out;
+  -webkit-text-decoration-skip: objects;
+
+  &:active,
+  &:hover {
+    color: darken($global-link-color, 10%);
+    outline: none;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 0;
+  font-family: $global-heading-family;
+  font-weight: 400;
+}
+
+h1, h2 { font-size: 18px; }
+
+h3 { font-size: 16px; }
+
+input,
+textarea {
+
+  &:focus {
+    outline: none;
+  }
+}
+
+address {
+  margin-bottom: 0;
+}
+
+.body_muted { overflow: hidden; }
+
+.container__inner {
+  width: 950px;
+  max-width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.main {
+  padding-bottom: 120px;
+}

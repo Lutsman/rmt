@@ -1,0 +1,27 @@
+.title {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+  color: $global-heading-color;
+  border-bottom: 1px solid $global-heading-color;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    display: block;
+    width: 245px;
+    max-width: 100%;
+    height: 3px;
+    background-color: $global-heading-color;
+  }
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+  }
+}

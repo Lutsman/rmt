@@ -1,0 +1,114 @@
+.btn {
+  padding-top: 0;
+  padding-bottom: 0;
+  font-size: $global-font-size;
+  line-height: 23px;
+  color: $global-font-color;
+  text-decoration: none;
+  border-radius: 5px;
+
+  &:focus, &.focus {
+    box-shadow: none;
+  }
+
+  &_size_large {
+    line-height: 32px;
+  }
+}
+
+.btn-primary {
+  color: $global-font-color;
+  background-color: $primary-color;
+  border-color: $primary-color;
+
+  &:hover {
+    color: #fff;
+    background-color: darken($primary-color, 10%);
+    border-color: darken($primary-color, 10%);
+  }
+
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active,
+  .show > &.dropdown-toggle {
+    color: #fff;
+    background-color: $primary-color;
+    border-color: $primary-color;
+
+    &:focus, &.focus {
+      box-shadow: none;
+    }
+  }
+}
+
+.btn-secondary {
+  color: $global-font-color;
+  background-color: $secondary-color;
+  border-color: $secondary-color;
+
+  &:hover {
+    color: #fff;
+    background-color: darken($secondary-color, 10%);
+    border-color: darken($secondary-color, 10%);
+  }
+
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active,
+  .show > &.dropdown-toggle {
+    color: #fff;
+    background-color: $secondary-color;
+    border-color: $secondary-color;
+
+    &:focus, &.focus {
+      box-shadow: none;
+    }
+  }
+}
+
+.btn-info {
+  color: $global-font-color;
+  background-color: $info-color;
+  border-color: $info-color;
+
+  &:hover {
+    color: #fff;
+    background-color: darken($info-color, 10%);
+    border-color: darken($info-color, 10%);
+  }
+
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active,
+  .show > &.dropdown-toggle {
+    color: #fff;
+    background-color: $info-color;
+    border-color: $info-color;
+
+    &:focus, &.focus {
+      box-shadow: none;
+    }
+  }
+}
+
+.btn-success {
+  color: $global-font-color;
+  background-color: $success-color;
+  border-color: $success-color;
+
+  &:hover {
+    color: #fff;
+    background-color: darken($success-color, 10%);
+    border-color: darken($success-color, 10%);
+  }
+
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active,
+  .show > &.dropdown-toggle {
+    color: #fff;
+    background-color: $success-color;
+    border-color: $success-color;
+
+    &:focus, &.focus {
+      box-shadow: none;
+    }
+  }
+}
+

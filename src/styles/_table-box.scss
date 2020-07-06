@@ -1,0 +1,87 @@
+.table-box {
+  padding: 20px;
+  text-align: center;
+  background-color: $table-background-color;
+}
+
+.table {
+  color: $global-font-color;
+  text-align: center;
+  border-bottom: 1px solid $global-background-color;
+
+  td, th {
+    padding: 10px;
+    vertical-align: middle;
+  }
+
+  td {
+    border-top-color: #6a6d71;
+  }
+
+  thead th {
+    font-size: 16px;
+    font-weight: normal;
+    white-space: nowrap;
+    background-color: $global-background-color;
+    border: none;
+  }
+
+  tbody tr:first-child td {
+    border-top: none;
+  }
+
+  &__icon {
+    width: 14px;
+    height: 14px;
+    margin-top: -3px;
+  }
+
+  &__title {
+    text-align: left;
+  }
+}
+
+.dataTables {
+
+  &_length,
+  &_filter,
+  &_info {
+    display: none;
+  }
+
+  &_paginate {
+    display: inline-flex;
+    margin-right: auto;
+    margin-left: auto;
+    border: 1px solid #6a6d71;
+    border-radius: 3px;
+
+    .paginate_button {
+      display: inline-flex;
+      padding-left: 10px;
+      padding-right: 10px;
+      line-height: 23px;
+      border-right: 1px solid #6a6d71;
+      cursor: pointer;
+
+      &:first-child {
+        border-radius: 3px 0 0 3px;
+      }
+
+      &:last-child {
+        border-right: none;
+        border-radius: 0 3px 3px 0;
+      }
+    }
+
+    .current {
+      background-color: $info-color;
+      cursor: default;
+    }
+
+    .previous,
+    .next {
+      display: none;
+    }
+  }
+}

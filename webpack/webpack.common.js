@@ -11,8 +11,8 @@ const dest = Path.join(__dirname, '../dist');
 
 module.exports = {
     entry: {
-        app: Path.resolve(__dirname, '../src/scripts/index'),
         vendors: Path.resolve(__dirname, '../src/scripts/vendors/index'),
+        app: Path.resolve(__dirname, '../src/scripts/index'),
     },
     output: {
         path: dest,
@@ -32,7 +32,9 @@ module.exports = {
         }),
         new webpack.ProvidePlugin({
             $: 'jquery',
-            jQuery: 'jquery'
+            jQuery: 'jquery',
+            'window.$': 'jquery',
+            'window.jQuery': 'jquery',
         }),
         // autoprefixer,
     ],

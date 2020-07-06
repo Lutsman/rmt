@@ -1,0 +1,14 @@
+.icon {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+  transition: all .15s ease-in-out;
+}
+
+.platform-icon {
+  width: 22px;
+  height: 22px;
+}

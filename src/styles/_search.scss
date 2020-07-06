@@ -1,0 +1,40 @@
+.search {
+  display: flex;
+  width: 100%;
+  background-color: $dark-background-color;
+  border-radius: 0 5px 5px 0;
+
+  &__input {
+    flex: 1 1 0;
+    min-width: 1px;
+    max-width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    line-height: 46px;
+    color: $global-font-color;
+    background-color: transparent;
+    border: none;
+  }
+
+  &__close {
+    line-height: 46px;
+    color: $muted-color;
+
+    &:hover {
+      color: $global-font-color;
+    }
+  }
+
+  &__icon {
+    width: 10px;
+    height: 10px;
+  }
+
+  &__submit {
+    line-height: 46px;
+    border-radius: 0 5px 5px 0;
+  }
+}
+
+
+
