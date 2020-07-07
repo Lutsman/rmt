@@ -16,9 +16,13 @@ a {
 
   &:active,
   &:hover {
-    color: darken($global-link-color, 10%);
+    color: #00ffe7;
     outline: none;
   }
+}
+
+button:focus {
+  outline: none;
 }
 
 img {
@@ -65,4 +69,37 @@ address {
 
 .main {
   padding-bottom: 120px;
+}
+
+.card {
+  padding: 10px 15px;
+  background-color: $dark-background-color;
+  border-color: #424345;
+}
+
+.checkbox {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  &__input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    overflow: hidden;
+
+    &:checked + .checkbox__icon {
+      color: $global-font-color;
+    }
+  }
+
+  &__icon {
+    width: 16px;
+    height: 16px;
+    padding: 2px;
+    margin-right: 5px;
+    color: transparent;
+    border: 1px solid $global-font-color;
+  }
 }

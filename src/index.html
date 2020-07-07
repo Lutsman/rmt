@@ -21,15 +21,17 @@
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
+                        <svg class="icon navbar-toggler-icon" aria-hidden="true">
+                            <use xlink:href="./images/sprite.svg#menu"></use>
+                        </svg>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Список товаров</a>
+                                <a class="nav-link" href="./gamelist.html">Список товаров</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">INFO</a>
+                                <a class="nav-link" href="./info.html">INFO</a>
                             </li>
                         </ul>
 
@@ -59,6 +61,20 @@
                                 </svg>
                             </button>
                             <button class="btn btn-primary search__submit" type="button">Поиск</button>
+                            <div class="search__alert">
+                                <p>Ошибка</p>
+                                <button class="btn btn-danger btn_size_large" type="button">
+                                    <svg class="icon search__icon" aria-hidden="true">
+                                        <use xlink:href="./images/sprite.svg#tick-inside-circle"></use>
+                                    </svg>
+                                    <span>Success</span>
+                                </button>
+                                <button class="btn alert-close" type="button">
+                                    <svg class="icon search__icon" aria-hidden="true">
+                                        <use xlink:href="./images/sprite.svg#close"></use>
+                                    </svg>
+                                </button>
+                            </div>
                         </div>
                         <ul class="nav nav-list" role="tablist">
                             <li class="nav-list__item" role="presentation">
@@ -77,7 +93,7 @@
                         <div class="tab-content">
                             <div class="tab-pane fade show active" id="eur" role="tabpanel" aria-labelledby="eur-tab">
                                 <div class="row">
-                                    <div class="col">
+                                    <div class="col-md mb-3 mb-md-0">
                                         <h3>World of Warcraft: Shadowlands Complete Collection (Heroic Edition) - Battle.net Key - NORTH AMERICA</h3>
                                         <ul class="info-list">
                                             <li class="info-list__item info-list__item_theme_skyblue">
@@ -101,7 +117,7 @@
                                             <button class="btn btn-info btn_size_large" type="button">Связаться через Telegram</button>
                                         </div>
                                     </div>
-                                    <div class="col-auto">
+                                    <div class="col-md-auto">
                                         <div class="chart-box">
                                             <canvas class="chart" width="340" height="340"></canvas>
                                             <div class="chart-box__percentage">75%</div>
@@ -111,7 +127,7 @@
                             </div>
                             <div class="tab-pane fade" id="usd" role="tabpanel" aria-labelledby="usd-tab">
                                 <div class="row">
-                                    <div class="col">
+                                    <div class="col-md mb-3 mb-md-0">
                                         <h3>World of Warcraft: Shadowlands Complete Collection (Heroic Edition) - Battle.net Key - NORTH AMERICA</h3>
                                         <ul class="info-list">
                                             <li class="info-list__item info-list__item_theme_skyblue">
@@ -135,7 +151,7 @@
                                             <button class="btn btn-info btn_size_large" type="button">Связаться через Telegram</button>
                                         </div>
                                     </div>
-                                    <div class="col-auto">
+                                    <div class="col-md-auto">
                                         <div class="chart-box">
                                             <canvas class="chart" width="340" height="340"></canvas>
                                             <div class="chart-box__percentage">75%</div>
@@ -145,7 +161,7 @@
                             </div>
                             <div class="tab-pane fade" id="gbp" role="tabpanel" aria-labelledby="gbp-tab">
                                 <div class="row">
-                                    <div class="col">
+                                    <div class="col-md mb-3 mb-md-0">
                                         <h3>World of Warcraft: Shadowlands Complete Collection (Heroic Edition) - Battle.net Key - NORTH AMERICA</h3>
                                         <ul class="info-list">
                                             <li class="info-list__item info-list__item_theme_skyblue">
@@ -169,7 +185,7 @@
                                             <button class="btn btn-info btn_size_large" type="button">Связаться через Telegram</button>
                                         </div>
                                     </div>
-                                    <div class="col-auto">
+                                    <div class="col-md-auto">
                                         <div class="chart-box">
                                             <canvas class="chart" width="340" height="340"></canvas>
                                             <div class="chart-box__percentage">75%</div>
@@ -179,7 +195,7 @@
                             </div>
                             <div class="tab-pane fade" id="rub" role="tabpanel" aria-labelledby="rub-tab">
                                 <div class="row">
-                                    <div class="col">
+                                    <div class="col-md mb-3 mb-md-0">
                                         <h3>World of Warcraft: Shadowlands Complete Collection (Heroic Edition) - Battle.net Key - NORTH AMERICA</h3>
                                         <ul class="info-list">
                                             <li class="info-list__item info-list__item_theme_skyblue">
@@ -203,7 +219,7 @@
                                             <button class="btn btn-info btn_size_large" type="button">Связаться через Telegram</button>
                                         </div>
                                     </div>
-                                    <div class="col-auto">
+                                    <div class="col-md-auto">
                                         <div class="chart-box">
                                             <canvas class="chart" width="340" height="340"></canvas>
                                             <div class="chart-box__percentage">75%</div>
@@ -225,209 +241,226 @@
                         <span>Срочно нужны</span>
                     </h2>
                     <div class="table-box">
-                        <table class="table">
-                            <thead>
-                            <tr>
-                                <th scope="col">
-                                    <svg class="icon table__icon" width="14" height="14" aria-hidden="true">
-                                        <use xlink:href="./images/sprite.svg#up-arrow"></use>
-                                    </svg>
-                                </th>
-                                <th class="table__title" scope="col">
-                                    <span>Название товара</span>
-                                    <svg class="icon table__icon" width="14" height="14" aria-hidden="true">
-                                        <use xlink:href="./images/sprite.svg#up-arrow"></use>
-                                    </svg>
-                                </th>
-                                <th scope="col">
-                                    <span>Ваши деньги (Выплата)</span>
-                                    <svg class="icon table__icon" width="14" height="14" aria-hidden="true">
-                                        <use xlink:href="./images/sprite.svg#up-arrow"></use>
-                                    </svg>
-                                </th>
-                                <th scope="col">
-                                    <span>Процент</span>
-                                    <svg class="icon table__icon" width="14" height="14" aria-hidden="true">
-                                        <use xlink:href="./images/sprite.svg#up-arrow"></use>
-                                    </svg>
-                                </th>
-                                <th scope="col">
-                                    <span>Средняя цена G2A</span>
-                                    <svg class="icon table__icon" width="14" height="14" aria-hidden="true">
-                                        <use xlink:href="./images/sprite.svg#up-arrow"></use>
-                                    </svg>
-                                </th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td>
-                                    <svg class="icon platform-icon" width="22" height="22" aria-hidden="true">
-                                        <use xlink:href="./images/symbol-defs.svg#icon-xbox"></use>
-                                    </svg>
-                                </td>
-                                <td class="table__title">Sea of Thieves - Anniversary Edition</td>
-                                <td>17,34 USD</td>
-                                <td>75%</td>
-                                <td>31.41 USD</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <svg class="icon platform-icon" width="22" height="22" aria-hidden="true">
-                                        <use xlink:href="./images/symbol-defs.svg#icon-uplay"></use>
-                                    </svg>
-                                </td>
-                                <td class="table__title">Assassin's Creed Unity Uplay Key GLOBAL</td>
-                                <td>17,34 USD</td>
-                                <td>75%</td>
-                                <td>31.41 USD</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <svg class="icon platform-icon" width="22" height="22" aria-hidden="true">
-                                        <use xlink:href="./images/symbol-defs.svg#icon-nintendo"></use>
-                                    </svg>
-                                </td>
-                                <td class="table__title">Nintendo eShop Card 15 EUR Nintendo EUROPE</td>
-                                <td>17,34 USD</td>
-                                <td>75%</td>
-                                <td>31.41 USD</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <svg class="icon platform-icon" width="22" height="22" aria-hidden="true">
-                                        <use xlink:href="./images/symbol-defs.svg#icon-blizzard"></use>
-                                    </svg>
-                                </td>
-                                <td class="table__title">World of Warcraft: Shadowlands Complete Collection (Heroic Edition) - Battle.net Key - NORTH AMERICA</td>
-                                <td>17,34 USD</td>
-                                <td>75%</td>
-                                <td>31.41 USD</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <svg class="icon platform-icon" width="22" height="22" aria-hidden="true">
-                                        <use xlink:href="./images/symbol-defs.svg#icon-sony_p"></use>
-                                    </svg>
-                                </td>
-                                <td class="table__title">PlayStation Network Gift Card 20 USD PSN UNITED STATES</td>
-                                <td>17,34 USD</td>
-                                <td>75%</td>
-                                <td>31.41 USD</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <svg class="icon platform-icon" width="22" height="22" aria-hidden="true">
-                                        <use xlink:href="./images/symbol-defs.svg#icon-origin"></use>
-                                    </svg>
-                                </td>
-                                <td class="table__title">The Sims 4 (PC) - Origin Key - GLOBAL</td>
-                                <td>17,34 USD</td>
-                                <td>75%</td>
-                                <td>31.41 USD</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <svg class="icon platform-icon" width="22" height="22" aria-hidden="true">
-                                        <use xlink:href="./images/symbol-defs.svg#icon-microsoft"></use>
-                                    </svg>
-                                </td>
-                                <td class="table__title">Microsoft Windows 10 Home Microsoft Key GLOBAL</td>
-                                <td>17,34 USD</td>
-                                <td>75%</td>
-                                <td>31.41 USD</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <svg class="icon platform-icon" width="22" height="22" aria-hidden="true">
-                                        <use xlink:href="./images/symbol-defs.svg#icon-steam"></use>
-                                    </svg>
-                                </td>
-                                <td class="table__title">Call of Duty: Black Ops III Steam Key GLOBAL</td>
-                                <td>17,34 USD</td>
-                                <td>75%</td>
-                                <td>31.41 USD</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <svg class="icon platform-icon" width="22" height="22" aria-hidden="true">
-                                        <use xlink:href="./images/symbol-defs.svg#icon-xbox"></use>
-                                    </svg>
-                                </td>
-                                <td class="table__title">Assassin's Creed Unity Uplay Key GLOBAL</td>
-                                <td>17,34 USD</td>
-                                <td>75%</td>
-                                <td>31.41 USD</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <svg class="icon platform-icon" width="22" height="22" aria-hidden="true">
-                                        <use xlink:href="./images/symbol-defs.svg#icon-xbox"></use>
-                                    </svg>
-                                </td>
-                                <td class="table__title">Nintendo eShop Card 15 EUR Nintendo EUROPE</td>
-                                <td>17,34 USD</td>
-                                <td>75%</td>
-                                <td>31.41 USD</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <svg class="icon platform-icon" width="22" height="22" aria-hidden="true">
-                                        <use xlink:href="./images/symbol-defs.svg#icon-xbox"></use>
-                                    </svg>
-                                </td>
-                                <td class="table__title">World of Warcraft: Shadowlands Complete Collection (Heroic Edition) - Battle.net Key - NORTH AMERICA</td>
-                                <td>17,34 USD</td>
-                                <td>75%</td>
-                                <td>31.41 USD</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <svg class="icon platform-icon" width="22" height="22" aria-hidden="true">
-                                        <use xlink:href="./images/symbol-defs.svg#icon-xbox"></use>
-                                    </svg>
-                                </td>
-                                <td class="table__title">PlayStation Network Gift Card 20 USD PSN UNITED STATES</td>
-                                <td>17,34 USD</td>
-                                <td>75%</td>
-                                <td>31.41 USD</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <svg class="icon platform-icon" width="22" height="22" aria-hidden="true">
-                                        <use xlink:href="./images/symbol-defs.svg#icon-xbox"></use>
-                                    </svg>
-                                </td>
-                                <td class="table__title">The Sims 4 (PC) - Origin Key - GLOBAL</td>
-                                <td>17,34 USD</td>
-                                <td>75%</td>
-                                <td>31.41 USD</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <svg class="icon platform-icon" width="22" height="22" aria-hidden="true">
-                                        <use xlink:href="./images/symbol-defs.svg#icon-xbox"></use>
-                                    </svg>
-                                </td>
-                                <td class="table__title">Microsoft Windows 10 Home Microsoft Key GLOBAL</td>
-                                <td>17,34 USD</td>
-                                <td>75%</td>
-                                <td>31.41 USD</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <svg class="icon platform-icon" width="22" height="22" aria-hidden="true">
-                                        <use xlink:href="./images/symbol-defs.svg#icon-xbox"></use>
-                                    </svg>
-                                </td>
-                                <td class="table__title">Call of Duty: Black Ops III Steam Key GLOBAL</td>
-                                <td>17,34 USD</td>
-                                <td>75%</td>
-                                <td>31.41 USD</td>
-                            </tr>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th scope="col">
+                                        <svg class="icon table__icon icon-up" width="14" height="14" aria-hidden="true">
+                                            <use xlink:href="./images/sprite.svg#up-arrow"></use>
+                                        </svg>
+                                        <svg class="icon table__icon icon-down" width="14" height="14" aria-hidden="true">
+                                            <use xlink:href="./images/sprite.svg#down-arrow"></use>
+                                        </svg>
+                                    </th>
+                                    <th class="table__title" scope="col">
+                                        <span>Название товара</span>
+                                        <svg class="icon table__icon icon-up" width="14" height="14" aria-hidden="true">
+                                            <use xlink:href="./images/sprite.svg#up-arrow"></use>
+                                        </svg>
+                                        <svg class="icon table__icon icon-down" width="14" height="14" aria-hidden="true">
+                                            <use xlink:href="./images/sprite.svg#down-arrow"></use>
+                                        </svg>
+                                    </th>
+                                    <th scope="col">
+                                        <span>Ваши деньги (Выплата)</span>
+                                        <svg class="icon table__icon icon-up" width="14" height="14" aria-hidden="true">
+                                            <use xlink:href="./images/sprite.svg#up-arrow"></use>
+                                        </svg>
+                                        <svg class="icon table__icon icon-down" width="14" height="14" aria-hidden="true">
+                                            <use xlink:href="./images/sprite.svg#down-arrow"></use>
+                                        </svg>
+                                    </th>
+                                    <th scope="col">
+                                        <span>Процент</span>
+                                        <svg class="icon table__icon icon-up" width="14" height="14" aria-hidden="true">
+                                            <use xlink:href="./images/sprite.svg#up-arrow"></use>
+                                        </svg>
+                                        <svg class="icon table__icon icon-down" width="14" height="14" aria-hidden="true">
+                                            <use xlink:href="./images/sprite.svg#down-arrow"></use>
+                                        </svg>
+                                    </th>
+                                    <th scope="col">
+                                        <span>Средняя цена G2A</span>
+                                        <svg class="icon table__icon icon-up" width="14" height="14" aria-hidden="true">
+                                            <use xlink:href="./images/sprite.svg#up-arrow"></use>
+                                        </svg>
+                                        <svg class="icon table__icon icon-down" width="14" height="14" aria-hidden="true">
+                                            <use xlink:href="./images/sprite.svg#down-arrow"></use>
+                                        </svg>
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>
+                                        <svg class="icon platform-icon" width="22" height="22" aria-hidden="true">
+                                            <use xlink:href="./images/symbol-defs.svg#icon-xbox"></use>
+                                        </svg>
+                                    </td>
+                                    <td class="table__title">Sea of Thieves - Anniversary Edition</td>
+                                    <td>17,34 USD</td>
+                                    <td>75%</td>
+                                    <td>31.41 USD</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <svg class="icon platform-icon" width="22" height="22" aria-hidden="true">
+                                            <use xlink:href="./images/symbol-defs.svg#icon-uplay"></use>
+                                        </svg>
+                                    </td>
+                                    <td class="table__title">Assassin's Creed Unity Uplay Key GLOBAL</td>
+                                    <td>17,34 USD</td>
+                                    <td>70%</td>
+                                    <td>31.00 USD</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <svg class="icon platform-icon" width="22" height="22" aria-hidden="true">
+                                            <use xlink:href="./images/symbol-defs.svg#icon-nintendo"></use>
+                                        </svg>
+                                    </td>
+                                    <td class="table__title">Nintendo eShop Card 15 EUR Nintendo EUROPE</td>
+                                    <td>1,34 USD</td>
+                                    <td>75%</td>
+                                    <td>30.41 USD</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <svg class="icon platform-icon" width="22" height="22" aria-hidden="true">
+                                            <use xlink:href="./images/symbol-defs.svg#icon-blizzard"></use>
+                                        </svg>
+                                    </td>
+                                    <td class="table__title">World of Warcraft: Shadowlands Complete Collection (Heroic Edition) - Battle.net Key - NORTH AMERICA</td>
+                                    <td>17,34 USD</td>
+                                    <td>75%</td>
+                                    <td>31.41 USD</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <svg class="icon platform-icon" width="22" height="22" aria-hidden="true">
+                                            <use xlink:href="./images/symbol-defs.svg#icon-sony_p"></use>
+                                        </svg>
+                                    </td>
+                                    <td class="table__title">PlayStation Network Gift Card 20 USD PSN UNITED STATES</td>
+                                    <td>17,34 USD</td>
+                                    <td>75%</td>
+                                    <td>31.41 USD</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <svg class="icon platform-icon" width="22" height="22" aria-hidden="true">
+                                            <use xlink:href="./images/symbol-defs.svg#icon-origin"></use>
+                                        </svg>
+                                    </td>
+                                    <td class="table__title">The Sims 4 (PC) - Origin Key - GLOBAL</td>
+                                    <td>17,34 USD</td>
+                                    <td>75%</td>
+                                    <td>31.41 USD</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <svg class="icon platform-icon" width="22" height="22" aria-hidden="true">
+                                            <use xlink:href="./images/symbol-defs.svg#icon-microsoft"></use>
+                                        </svg>
+                                    </td>
+                                    <td class="table__title">Microsoft Windows 10 Home Microsoft Key GLOBAL</td>
+                                    <td>17,34 USD</td>
+                                    <td>75%</td>
+                                    <td>31.41 USD</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <svg class="icon platform-icon" width="22" height="22" aria-hidden="true">
+                                            <use xlink:href="./images/symbol-defs.svg#icon-steam"></use>
+                                        </svg>
+                                    </td>
+                                    <td class="table__title">Call of Duty: Black Ops III Steam Key GLOBAL</td>
+                                    <td>17,34 USD</td>
+                                    <td>75%</td>
+                                    <td>31.41 USD</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <svg class="icon platform-icon" width="22" height="22" aria-hidden="true">
+                                            <use xlink:href="./images/symbol-defs.svg#icon-xbox"></use>
+                                        </svg>
+                                    </td>
+                                    <td class="table__title">Assassin's Creed Unity Uplay Key GLOBAL</td>
+                                    <td>17,34 USD</td>
+                                    <td>75%</td>
+                                    <td>31.41 USD</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <svg class="icon platform-icon" width="22" height="22" aria-hidden="true">
+                                            <use xlink:href="./images/symbol-defs.svg#icon-xbox"></use>
+                                        </svg>
+                                    </td>
+                                    <td class="table__title">Nintendo eShop Card 15 EUR Nintendo EUROPE</td>
+                                    <td>17,34 USD</td>
+                                    <td>75%</td>
+                                    <td>31.41 USD</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <svg class="icon platform-icon" width="22" height="22" aria-hidden="true">
+                                            <use xlink:href="./images/symbol-defs.svg#icon-xbox"></use>
+                                        </svg>
+                                    </td>
+                                    <td class="table__title">World of Warcraft: Shadowlands Complete Collection (Heroic Edition) - Battle.net Key - NORTH AMERICA</td>
+                                    <td>17,34 USD</td>
+                                    <td>75%</td>
+                                    <td>31.41 USD</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <svg class="icon platform-icon" width="22" height="22" aria-hidden="true">
+                                            <use xlink:href="./images/symbol-defs.svg#icon-xbox"></use>
+                                        </svg>
+                                    </td>
+                                    <td class="table__title">PlayStation Network Gift Card 20 USD PSN UNITED STATES</td>
+                                    <td>17,34 USD</td>
+                                    <td>75%</td>
+                                    <td>31.41 USD</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <svg class="icon platform-icon" width="22" height="22" aria-hidden="true">
+                                            <use xlink:href="./images/symbol-defs.svg#icon-xbox"></use>
+                                        </svg>
+                                    </td>
+                                    <td class="table__title">The Sims 4 (PC) - Origin Key - GLOBAL</td>
+                                    <td>17,34 USD</td>
+                                    <td>75%</td>
+                                    <td>31.41 USD</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <svg class="icon platform-icon" width="22" height="22" aria-hidden="true">
+                                            <use xlink:href="./images/symbol-defs.svg#icon-xbox"></use>
+                                        </svg>
+                                    </td>
+                                    <td class="table__title">Microsoft Windows 10 Home Microsoft Key GLOBAL</td>
+                                    <td>17,34 USD</td>
+                                    <td>75%</td>
+                                    <td>31.41 USD</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <svg class="icon platform-icon" width="22" height="22" aria-hidden="true">
+                                            <use xlink:href="./images/symbol-defs.svg#icon-xbox"></use>
+                                        </svg>
+                                    </td>
+                                    <td class="table__title">Call of Duty: Black Ops III Steam Key GLOBAL</td>
+                                    <td>17,34 USD</td>
+                                    <td>75%</td>
+                                    <td>31.41 USD</td>
+                                </tr>
 
-                            </tbody>
-                        </table>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </section>

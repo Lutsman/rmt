@@ -10,6 +10,16 @@
   margin-right: 5px;
 }
 
+.navbar-toggler {
+  color: $global-font-color;
+  border-color: rgba(255,255,255,.5);
+}
+
+.navbar-toggler-icon {
+  width: 24px;
+  height: 24px;
+}
+
 .slogan {
   padding-top: 40px;
   padding-bottom: 70px;

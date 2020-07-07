@@ -1,9 +1,9 @@
 .chart-box {
   position: relative;
-  width: 420px;
+  width: 320px;
   max-width: 100%;
-  padding-left: 25px;
-  padding-right: 25px;
+  margin-right: auto;
+  margin-left: auto;
 
   &__percentage {
     position: absolute;
@@ -12,9 +12,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 240px;
-    height: 240px;
-    font-size: 74px;
+    width: 180px;
+    height: 180px;
+    font-size: 56px;
     color: $global-heading-color;
     background-color: $global-background-color;
     border-radius: 50%;
@@ -22,4 +22,18 @@
   }
 }
 
+@media (min-width: $breakpoint-lg) {
+
+  .chart-box {
+    width: 420px;
+    padding-left: 25px;
+    padding-right: 25px;
+
+    &__percentage {
+      width: 240px;
+      height: 240px;
+      font-size: 74px;
+    }
+  }
+}
 

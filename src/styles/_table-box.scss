@@ -1,4 +1,5 @@
 .table-box {
+  position: relative;
   padding: 20px;
   text-align: center;
   background-color: $table-background-color;
@@ -19,7 +20,7 @@
   }
 
   thead th {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: normal;
     white-space: nowrap;
     background-color: $global-background-color;
@@ -38,6 +39,42 @@
 
   &__title {
     text-align: left;
+  }
+
+  &__filter {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .sorting,
+  .sorting_asc,
+  .sorting_desc {
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+      color: #00ffe7;
+    }
+  }
+
+  .icon-up {
+    display: inline-flex;
+  }
+
+  .icon-down {
+    display: none;
+  }
+
+
+  .sorting_asc {
+    .icon-up {
+      display: none;
+    }
+
+    .icon-down {
+      display: inline-flex;
+    }
   }
 }
 
@@ -83,5 +120,18 @@
     .next {
       display: none;
     }
+  }
+}
+
+@media (min-width: $breakpoint-lg) {
+
+  .table thead th {
+    font-size: 16px;
+  }
+
+  .table__filter {
+    top: 50px;
+    left: 270px;
+    transform: translateY(-100%);
   }
 }

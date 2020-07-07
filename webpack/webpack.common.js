@@ -28,6 +28,12 @@ module.exports = {
         ]),
         new HtmlWebpackPlugin({
             template: Path.resolve(__dirname, '../src/index.html'),
+            filename: "index.html",
+            inject: "body",
+        }),
+        new HtmlWebpackPlugin({
+            template: Path.resolve(__dirname, '../src/gamelist.html'),
+            filename: "gamelist.html",
             inject: "body",
         }),
         new webpack.ProvidePlugin({

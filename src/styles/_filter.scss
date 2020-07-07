@@ -1,0 +1,23 @@
+.filter {
+  position: absolute;
+  z-index: 10;
+  width: 440px;
+  max-width: 100%;
+  font-size: 12px;
+  text-align: left;
+
+  &__close {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    &:hover {
+      color: $danger-color;
+    }
+  }
+
+  &__icon {
+    width: 10px;
+    height: 10px;
+  }
+}
