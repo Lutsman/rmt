@@ -52,7 +52,10 @@ $(document).ready(function() {
                 ]
             },
             options: {
-                responsive: true
+                responsive: true,
+                legend: {
+                    display: false,
+                },
             }
         };
         const chart = new Chart($chartEl, config);
