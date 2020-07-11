@@ -1,13 +1,6 @@
 import Chart from 'chart.js';
 
 $(document).ready(function() {
-    // datatable
-    // (() => {
-    //     const $table = $('.table');
-    //
-    //     $table.DataTable();
-    // })();
-
     //chart
     (() => {
         const $chartEl = $('.chart');
@@ -25,6 +18,9 @@ $(document).ready(function() {
         };
         const config = {
             type: 'pie',
+            gridLines: {
+                display: false,
+            },
             data: {
                 datasets: [{
                     data: [
@@ -52,9 +48,17 @@ $(document).ready(function() {
                 ]
             },
             options: {
+                tooltips: {
+                    enabled: true,
+                },
                 responsive: true,
                 legend: {
                     display: false,
+                },
+                elements: {
+                    arc: {
+                        borderWidth: 0,
+                    },
                 },
             }
         };
@@ -64,13 +68,53 @@ $(document).ready(function() {
         });
     })();
 
-    //close alert
+    //datatable
     (() => {
-        const $body = $('body');
-        const closeBtnSelector = '[close-alert]';
+        const $table = $('.table-datatable');
+        const tableInst = $table.DataTable();
 
-        $body.on('click', (e) => {
+        // search input
+        (() => {
+            const $searchContainer = $('.search--use-table');
+            const $searchInput = $searchContainer.find('.search__input');
+            const $resetBtn = $searchContainer.find('.search__close');
+            const $submitBtn = $searchContainer.find('.search__submit');
 
-        });
+            $submitBtn.on('click', () => {
+                const val = $searchInput.val();
+
+                tableInst
+                    .search(val)
+                    .draw();
+            });
+
+            $resetBtn.on('click', () => {
+                $searchInput.val('');
+                tableInst
+                    .search('')
+                    .draw();
+            });
+
+            // $searchInput.on('input', e => {
+            //     const $target = $(e.target);
+            //     const val = $target.val();
+            //     console.log(val);
+            //
+            //     tableInst
+            //         .search(val)
+            //         .draw();
+            //
+            //     // if (!val) {
+            //     //     $table.search(val).reset();
+            //     // } else {
+            //     //     $table.
+            //     // }
+            // });
+        })();
+
+        // filters
+        (() => {
+
+        })();
     })();
 });
