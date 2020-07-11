@@ -11,18 +11,26 @@
     max-width: 100%;
     padding-right: 15px;
     padding-left: 15px;
-    line-height: 46px;
+    line-height: 44px;
     color: $global-font-color;
     background-color: transparent;
     border: none;
+
+    &_small {
+      line-height: 34px;
+    }
   }
 
   &__close {
-    line-height: 46px;
+    line-height: 44px;
     color: $muted-color;
 
     &:hover {
       color: $global-font-color;
+    }
+
+    &_small {
+      line-height: 34px;
     }
   }
 
@@ -34,8 +42,12 @@
   &__submit {
     padding-right: 25px;
     padding-left: 25px;
-    line-height: 46px;
+    line-height: 44px;
     border-radius: 0 5px 5px 0;
+
+    &_small {
+      line-height: 34px;
+    }
   }
 
   &__alert {
