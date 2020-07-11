@@ -114,7 +114,15 @@ $(document).ready(function() {
 
         // filters
         (() => {
+            const $tableFilterBtn = $('.table-filter-btn');
 
+            $tableFilterBtn.on('click', function (e) {
+                const $btn = $(this);
+                e.preventDefault();
+                e.stopPropagation();
+
+
+            });
         })();
     })();
 });
