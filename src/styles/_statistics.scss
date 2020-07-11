@@ -1,0 +1,60 @@
+.statistics {
+
+  &__title {
+    margin-bottom: 30px;
+  }
+
+  &__controls {
+    display: flex;
+    width: 450px;
+    max-width: 100%;
+    padding-top: 6px;
+    margin-bottom: 10px;
+  }
+
+  &__range {
+    display: flex;
+    align-items: center;
+  }
+
+  &__label {
+    position: relative;
+    margin-bottom: 0;
+  }
+
+  &__input {
+    width: 90px;
+    max-width: 100%;
+    padding-right: 10px;
+    padding-left: 10px;
+    font-size: 12px;
+    line-height: 26px;
+    color: $global-font-color;
+    background-color: transparent;
+    border: 1px solid $global-font-color;
+    border-radius: 3px;
+  }
+
+  &__subtext {
+    position: absolute;
+    top: -6px;
+    left: 6px;
+    padding-right: 4px;
+    padding-left: 4px;
+    font-size: 12px;
+    background-color: $table-background-color;
+  }
+
+  &__divider {
+    margin-right: 5px;
+    margin-left: 5px;
+  }
+
+  &__button {
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-left: 20px;
+    font-size: 12px;
+    line-height: 26px;
+  }
+}

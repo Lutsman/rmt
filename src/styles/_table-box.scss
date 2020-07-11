@@ -134,4 +134,15 @@
     left: 270px;
     transform: translateY(-100%);
   }
+
+  .table__blank {
+    width: 240px;
+  }
+}
+
+@media (min-width: $breakpoint-xl) {
+
+  .table__blank {
+    width: 440px;
+  }
 }
