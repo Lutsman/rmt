@@ -116,12 +116,21 @@ $(document).ready(function() {
         (() => {
             const $tableFilterBtn = $('.table-filter-btn');
 
-            $tableFilterBtn.on('click', function (e) {
+            $tableFilterBtn.each(function () {
                 const $btn = $(this);
-                e.preventDefault();
-                e.stopPropagation();
+                const $target = $($btn.attr('data-target'));
+                const $closeBtn = $target.find('.filter__close');
 
+                $closeBtn.on('click', function () {
+                    $target.slideUp();
+                });
 
+                $btn.on('click', function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    $target.slideToggle();
+                });
             });
         })();
     })();
