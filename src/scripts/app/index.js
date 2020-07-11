@@ -1,7 +1,7 @@
 import Chart from 'chart.js';
 
 $(document).ready(function() {
-    //datatable
+    // datatable
     // (() => {
     //     const $table = $('.table');
     //
@@ -58,6 +58,19 @@ $(document).ready(function() {
                 },
             }
         };
-        const chart = new Chart($chartEl, config);
+
+        $chartEl.each(function () {
+            const chart = new Chart(this, config);
+        });
+    })();
+
+    //close alert
+    (() => {
+        const $body = $('body');
+        const closeBtnSelector = '[close-alert]';
+
+        $body.on('click', (e) => {
+
+        });
     })();
 });
