@@ -1,0 +1,521 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Admin</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap" rel="stylesheet">
+  <!--    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.21/datatables.min.css"/>-->
+<link href="styles/vendors.476355915d93ba7c8b6f.css" rel="stylesheet"><link href="styles/app.476355915d93ba7c8b6f.css" rel="stylesheet"></head>
+<body>
+
+<div class="page">
+  <div>
+    <header class="header">
+      <div class="container">
+        <nav class="navbar navbar-expand-sm">
+          <a href="./" class="navbar-brand">
+            <img src="./images/logo.png" alt="Logo">
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                  aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <svg class="icon navbar-toggler-icon" aria-hidden="true">
+              <use xlink:href="./images/sprite.svg#menu"></use>
+            </svg>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="./gamelist.html">Список товаров</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./info.html">INFO</a>
+              </li>
+            </ul>
+
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Форум</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Отзывы</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="section">
+        <div class="container">
+          <h2 class="title">
+            <svg class="icon title__icon" aria-hidden="true">
+              <use xlink:href="./images/sprite.svg#c-hot"></use>
+            </svg>
+            <span>Админка</span>
+          </h2>
+
+          <ul class="nav nav-list mb-2">
+            <li class="nav-list__item">
+              <a class="btn btn-secondary text-uppercase">eur</a>
+            </li>
+            <li class="nav-list__item">
+              <a class="btn btn-success text-uppercase">usd</a>
+            </li>
+            <li class="nav-list__item">
+              <a class="btn btn-info text-uppercase">gbp</a>
+            </li>
+            <li class="nav-list__item">
+              <a class="btn btn-primary text-uppercase">rub</a>
+            </li>
+          </ul>
+
+          <div class="admin">
+            <ul class="nav admin__nav" role="tablist">
+              <li class="nav-item" role="presentation">
+                <a class="nav-link active" id="statistics-tab" data-toggle="tab" href="#statistics" role="tab" aria-controls="statistics" aria-selected="true">Статистика</a>
+              </li>
+              <li class="nav-item" role="presentation">
+                <a class="nav-link" id="fixed-goods-tab" data-toggle="tab" href="#fixed-goods" role="tab" aria-controls="fixed-goods" aria-selected="false">Фисксированные товары</a>
+              </li>
+              <li class="nav-item" role="presentation">
+                <a class="nav-link" id="urgently-needed-tab" data-toggle="tab" href="#urgently-needed" role="tab" aria-controls="urgently-needed" aria-selected="false">Срочно нужны</a>
+              </li>
+              <li class="nav-item" role="presentation">
+                <a class="nav-link" id="exceptions-tab" data-toggle="tab" href="#exceptions" role="tab" aria-controls="exceptions" aria-selected="false">Исключения</a>
+              </li>
+              <li class="nav-item" role="presentation">
+                <a class="nav-link" id="settings-tab" data-toggle="tab" href="#settings" role="tab" aria-controls="settings" aria-selected="false">Настройки</a>
+              </li>
+            </ul>
+
+            <div class="tab-content">
+              <div class="tab-pane fade show active" id="statistics" role="tabpanel" aria-labelledby="statistics-tab">
+                <h3 class="statistics__title">Формула комиссии</h3>
+                <div class="statistics__controls">
+                  <div class="statistics__range mb-3 mb-sm-0">
+                    <label class="statistics__label">
+                      <input class="statistics__input" type="text">
+                      <span class="statistics__subtext">От</span>
+                    </label>
+                    <span class="statistics__divider">-</span>
+                    <label class="statistics__label">
+                      <input class="statistics__input" type="text">
+                      <span class="statistics__subtext">До</span>
+                    </label>
+                  </div>
+                  <div class="ml-auto">
+                    <label class="statistics__label">
+                      <input class="statistics__input" type="text">
+                      <span class="statistics__subtext">Процент</span>
+                    </label>
+                    <button class="btn btn-primary statistics__button" type="button">Добавить</button>
+                  </div>
+                </div>
+
+                <div class="d-flex mb-3">
+                  <button class="btn btn-primary admin__button ml-auto" type="button">Удалить все</button>
+                </div>
+
+                <div class="table-responsive">
+                  <table class="table">
+                    <thead>
+                    <tr>
+                      <th class="table__title" scope="col">Категория цены</th>
+                      <th scope="col">Процент для формулы</th>
+                      <th scope="col">Действие</th>
+                      <th scope="col" class="table__blank"></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                      <td class="table__title">От 0 до 10,99 USD</td>
+                      <td>50</td>
+                      <td>Удалить</td>
+                      <td class="table__blank"></td>
+                    </tr>
+                    <tr>
+                      <td class="table__title">От 11 до 16,99 USD</td>
+                      <td>57</td>
+                      <td>Удалить</td>
+                      <td class="table__blank"></td>
+                    </tr>
+                    <tr>
+                      <td class="table__title">От 17 до 21,99 USD</td>
+                      <td>61</td>
+                      <td>Удалить</td>
+                      <td class="table__blank"></td>
+                    </tr>
+
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="tab-pane fade" id="fixed-goods" role="tabpanel" aria-labelledby="fixed-goods-tab">
+                <div class="row mb-5">
+                  <div class="col-auto">
+                    <div class="mb-5">
+                      <textarea class="info__area" name="id-list" id="id-list" placeholder="Список ID..."></textarea>
+                      <div class="info__controls">
+                        <button class="btn btn-primary" type="button">Добавить</button>
+                      </div>
+                    </div>
+
+                    <div>
+                      <textarea class="info__area info__area_small" name="warning-id-message" id="warning-id-message" placeholder="Ваше предупреждение..."></textarea>
+                      <div class="info__controls">
+                        <button class="btn btn-primary" type="button">Сохранить</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="d-flex mb-3">
+                  <button class="btn btn-primary admin__button ml-auto" type="button">Удалить все</button>
+                </div>
+
+                <div class="table-responsive">
+                  <table class="table table-datatable">
+                    <thead>
+                    <tr>
+                      <th class="table__title" scope="col">
+                        <span>ID товара</span>
+                        <svg class="icon table__icon icon-up" width="14" height="14" aria-hidden="true">
+                          <use xlink:href="./images/sprite.svg#up-arrow"></use>
+                        </svg>
+                        <svg class="icon table__icon icon-down" width="14" height="14" aria-hidden="true">
+                          <use xlink:href="./images/sprite.svg#down-arrow"></use>
+                        </svg>
+                      </th>
+                      <th class="table__title" scope="col">
+                        <span>Название товара</span>
+                        <svg class="icon table__icon icon-up" width="14" height="14" aria-hidden="true">
+                          <use xlink:href="./images/sprite.svg#up-arrow"></use>
+                        </svg>
+                        <svg class="icon table__icon icon-down" width="14" height="14" aria-hidden="true">
+                          <use xlink:href="./images/sprite.svg#down-arrow"></use>
+                        </svg>
+                      </th>
+                      <th scope="col">
+                        <span>Выплата</span>
+                        <svg class="icon table__icon icon-up" width="14" height="14" aria-hidden="true">
+                          <use xlink:href="./images/sprite.svg#up-arrow"></use>
+                        </svg>
+                        <svg class="icon table__icon icon-down" width="14" height="14" aria-hidden="true">
+                          <use xlink:href="./images/sprite.svg#down-arrow"></use>
+                        </svg>
+                      </th>
+                      <th scope="col">
+                        <span>Действие</span>
+                        <svg class="icon table__icon icon-up" width="14" height="14" aria-hidden="true">
+                          <use xlink:href="./images/sprite.svg#up-arrow"></use>
+                        </svg>
+                        <svg class="icon table__icon icon-down" width="14" height="14" aria-hidden="true">
+                          <use xlink:href="./images/sprite.svg#down-arrow"></use>
+                        </svg>
+                      </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                      <td class="table__title">10000000202004</td>
+                      <td class="table__title">Sea of Thieves - Anniversary Edition</td>
+                      <td>17,34 USD</td>
+                      <td>
+                        <div class="dropdown table__dropdown">
+                          <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span>показывать</span>
+                            <svg class="icon table__icon" width="14" height="14" aria-hidden="true">
+                              <use xlink:href="./images/sprite.svg#down-arrow"></use>
+                            </svg>
+                          </button>
+                          <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">скрывать</a>
+                            <a class="dropdown-item" href="#">удалить</a>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="table__title">10000000202004</td>
+                      <td class="table__title">Assassin's Creed Unity Uplay Key GLOBAL</td>
+                      <td>17,34 USD</td>
+                      <td>
+                        <div class="dropdown table__dropdown">
+                          <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span>показывать</span>
+                            <svg class="icon table__icon" width="14" height="14" aria-hidden="true">
+                              <use xlink:href="./images/sprite.svg#down-arrow"></use>
+                            </svg>
+                          </button>
+                          <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">скрывать</a>
+                            <a class="dropdown-item" href="#">удалить</a>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="table__title">10000000202004</td>
+                      <td class="table__title">Nintendo eShop Card 15 EUR Nintendo EUROPE</td>
+                      <td>17,35 USD</td>
+                      <td>
+                        <div class="dropdown table__dropdown">
+                          <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span>показывать</span>
+                            <svg class="icon table__icon" width="14" height="14" aria-hidden="true">
+                              <use xlink:href="./images/sprite.svg#down-arrow"></use>
+                            </svg>
+                          </button>
+                          <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">скрывать</a>
+                            <a class="dropdown-item" href="#">удалить</a>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="table__title">10000000202004</td>
+                      <td class="table__title">World of Warcraft: Shadowlands Complete Collection (Heroic Edition) - Battle.net Key - NORTH AMERICA</td>
+                      <td>17,34 USD</td>
+                      <td>
+                        <div class="dropdown table__dropdown">
+                          <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span>показывать</span>
+                            <svg class="icon table__icon" width="14" height="14" aria-hidden="true">
+                              <use xlink:href="./images/sprite.svg#down-arrow"></use>
+                            </svg>
+                          </button>
+                          <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">скрывать</a>
+                            <a class="dropdown-item" href="#">удалить</a>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="table__title">10000000202005</td>
+                      <td class="table__title">PlayStation Network Gift Card 20 USD PSN UNITED STATES</td>
+                      <td>17,34 USD</td>
+                      <td>
+                        <div class="dropdown table__dropdown">
+                          <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span>показывать</span>
+                            <svg class="icon table__icon" width="14" height="14" aria-hidden="true">
+                              <use xlink:href="./images/sprite.svg#down-arrow"></use>
+                            </svg>
+                          </button>
+                          <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">скрывать</a>
+                            <a class="dropdown-item" href="#">удалить</a>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="tab-pane fade" id="urgently-needed" role="tabpanel" aria-labelledby="urgently-needed-tab">
+                <div class="row mb-5">
+                  <div class="col-auto">
+                    <div class="mb-5">
+                      <textarea class="info__area" name="main-id-list" id="main-id-list" placeholder="Список ID которые будут отображаться на галвном..."></textarea>
+                      <div class="info__controls">
+                        <button class="btn btn-primary" type="button">Добавить</button>
+                      </div>
+                    </div>
+
+                    <div>
+                      <textarea class="info__area info__area_small" name="warning-main-id-message" id="warning-main-id-message" placeholder="Ваше предупреждение..."></textarea>
+                      <div class="info__controls">
+                        <button class="btn btn-primary" type="button">Сохранить</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="d-flex mb-3">
+                  <button class="btn btn-primary admin__button ml-auto" type="button">Удалить все</button>
+                </div>
+
+                <div class="table-responsive">
+                  <table class="table table-datatable">
+                    <thead>
+                    <tr>
+                      <th class="table__title" scope="col">
+                        <span>ID товара</span>
+                        <svg class="icon table__icon icon-up" width="14" height="14" aria-hidden="true">
+                          <use xlink:href="./images/sprite.svg#up-arrow"></use>
+                        </svg>
+                        <svg class="icon table__icon icon-down" width="14" height="14" aria-hidden="true">
+                          <use xlink:href="./images/sprite.svg#down-arrow"></use>
+                        </svg>
+                      </th>
+                      <th class="table__title" scope="col">
+                        <span>Название товара</span>
+                        <svg class="icon table__icon icon-up" width="14" height="14" aria-hidden="true">
+                          <use xlink:href="./images/sprite.svg#up-arrow"></use>
+                        </svg>
+                        <svg class="icon table__icon icon-down" width="14" height="14" aria-hidden="true">
+                          <use xlink:href="./images/sprite.svg#down-arrow"></use>
+                        </svg>
+                      </th>
+                      <th scope="col">
+                        <span>Выплата</span>
+                        <svg class="icon table__icon icon-up" width="14" height="14" aria-hidden="true">
+                          <use xlink:href="./images/sprite.svg#up-arrow"></use>
+                        </svg>
+                        <svg class="icon table__icon icon-down" width="14" height="14" aria-hidden="true">
+                          <use xlink:href="./images/sprite.svg#down-arrow"></use>
+                        </svg>
+                      </th>
+                      <th scope="col">
+                        <span>Действие</span>
+                        <svg class="icon table__icon icon-up" width="14" height="14" aria-hidden="true">
+                          <use xlink:href="./images/sprite.svg#up-arrow"></use>
+                        </svg>
+                        <svg class="icon table__icon icon-down" width="14" height="14" aria-hidden="true">
+                          <use xlink:href="./images/sprite.svg#down-arrow"></use>
+                        </svg>
+                      </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                      <td class="table__title">10000000202004</td>
+                      <td class="table__title">Sea of Thieves - Anniversary Edition</td>
+                      <td>17,34 USD</td>
+                      <td>
+                        <div class="dropdown table__dropdown">
+                          <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span>показывать</span>
+                            <svg class="icon table__icon" width="14" height="14" aria-hidden="true">
+                              <use xlink:href="./images/sprite.svg#down-arrow"></use>
+                            </svg>
+                          </button>
+                          <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">скрывать</a>
+                            <a class="dropdown-item" href="#">удалить</a>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="table__title">10000000202004</td>
+                      <td class="table__title">Assassin's Creed Unity Uplay Key GLOBAL</td>
+                      <td>17,34 USD</td>
+                      <td>
+                        <div class="dropdown table__dropdown">
+                          <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span>показывать</span>
+                            <svg class="icon table__icon" width="14" height="14" aria-hidden="true">
+                              <use xlink:href="./images/sprite.svg#down-arrow"></use>
+                            </svg>
+                          </button>
+                          <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">скрывать</a>
+                            <a class="dropdown-item" href="#">удалить</a>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="table__title">10000000202004</td>
+                      <td class="table__title">Nintendo eShop Card 15 EUR Nintendo EUROPE</td>
+                      <td>17,35 USD</td>
+                      <td>
+                        <div class="dropdown table__dropdown">
+                          <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span>показывать</span>
+                            <svg class="icon table__icon" width="14" height="14" aria-hidden="true">
+                              <use xlink:href="./images/sprite.svg#down-arrow"></use>
+                            </svg>
+                          </button>
+                          <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">скрывать</a>
+                            <a class="dropdown-item" href="#">удалить</a>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="table__title">10000000202004</td>
+                      <td class="table__title">World of Warcraft: Shadowlands Complete Collection (Heroic Edition) - Battle.net Key - NORTH AMERICA</td>
+                      <td>17,34 USD</td>
+                      <td>
+                        <div class="dropdown table__dropdown">
+                          <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span>показывать</span>
+                            <svg class="icon table__icon" width="14" height="14" aria-hidden="true">
+                              <use xlink:href="./images/sprite.svg#down-arrow"></use>
+                            </svg>
+                          </button>
+                          <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">скрывать</a>
+                            <a class="dropdown-item" href="#">удалить</a>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="table__title">10000000202005</td>
+                      <td class="table__title">PlayStation Network Gift Card 20 USD PSN UNITED STATES</td>
+                      <td>17,34 USD</td>
+                      <td>
+                        <div class="dropdown table__dropdown">
+                          <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span>показывать</span>
+                            <svg class="icon table__icon" width="14" height="14" aria-hidden="true">
+                              <use xlink:href="./images/sprite.svg#down-arrow"></use>
+                            </svg>
+                          </button>
+                          <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">скрывать</a>
+                            <a class="dropdown-item" href="#">удалить</a>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="tab-pane fade" id="exceptions" role="tabpanel" aria-labelledby="exceptions-tab">...</div>
+              <div class="tab-pane fade" id="settings" role="tabpanel" aria-labelledby="settings-tab">...</div>
+            </div>
+
+
+
+          </div>
+
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <address>
+        <div>Контактные данные:</div>
+        <div>Telegram: <a href="tg://resolve?domain=@qwerty123">@qwerty123</a></div>
+      </address>
+    </div>
+  </footer>
+</div>
+
+<script
+  src="https://code.jquery.com/jquery-2.2.4.js"
+  integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+  crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.21/datatables.min.js"></script>
+
+
+<script type="text/javascript" src="scripts/vendors.476355915d93ba7c8b6f.js"></script><script type="text/javascript" src="scripts/app.476355915d93ba7c8b6f.js"></script></body>
+</html>
