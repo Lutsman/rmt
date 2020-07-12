@@ -3,9 +3,17 @@
   top: 50%;
   left: 0;
   z-index: 1030;
+  display: none;
   width: 204px;
   height: 93px;
   padding: 15px;
   background-color: #363c43;
   transform: translateY(-50%);
+}
+
+@media (min-width: $breakpoint-xl) {
+
+  .contacts {
+    display: block;
+  }
 }
