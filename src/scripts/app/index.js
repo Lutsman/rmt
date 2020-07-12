@@ -71,7 +71,7 @@ $(document).ready(function() {
     //datatable
     (() => {
         const $table = $('.table-datatable');
-        const tableInst = $table.DataTable();
+        const tableInst = $table.DataTable && $table.DataTable();
 
         // search input
         (() => {
@@ -95,42 +95,71 @@ $(document).ready(function() {
                     .draw();
             });
 
-            // $searchInput.on('input', e => {
-            //     const $target = $(e.target);
-            //     const val = $target.val();
-            //     console.log(val);
-            //
-            //     tableInst
-            //         .search(val)
-            //         .draw();
-            //
-            //     // if (!val) {
-            //     //     $table.search(val).reset();
-            //     // } else {
-            //     //     $table.
-            //     // }
-            // });
+            $searchInput.on('input', e => {
+                const $target = $(e.target);
+                const val = $target.val();
+
+                tableInst
+                    .search(val)
+                    .draw();
+            });
         })();
 
         // filters
         (() => {
             const $tableFilterBtn = $('.table-filter-btn');
 
-            $tableFilterBtn.each(function () {
-                const $btn = $(this);
-                const $target = $($btn.attr('data-target'));
-                const $closeBtn = $target.find('.filter__close');
+            if (!$tableFilterBtn.length) return;
 
-                $closeBtn.on('click', function () {
-                    $target.slideUp();
-                });
+            const $filterPane = $($tableFilterBtn.attr('data-target'));
+            const $closeBtn = $filterPane.find('.filter__close');
 
-                $btn.on('click', function (e) {
-                    e.preventDefault();
-                    e.stopPropagation();
+            $closeBtn.on('click', () => {
+                $filterPane.slideUp();
+            });
 
-                    $target.slideToggle();
-                });
+            $tableFilterBtn.on('click', e => {
+                e.preventDefault();
+                e.stopPropagation();
+
+                $filterPane.slideToggle();
+            });
+
+            $filterPane.on('click', 'label.checkbox', () => {
+                tableInst.draw();
+            });
+
+            $.fn.dataTable.ext.search.push((settings, data, i, origData) => {
+                const $checkboxesCheckedCategory = $filterPane.find('.filter-category input[type="checkbox"]:checked');
+                const $checkboxesCheckedPlatform = $filterPane.find('.filter-platform input[type="checkbox"]:checked');
+                const categoryValue = $(`<div>${origData[1]}</div>`).find('.category').text().toLowerCase();
+                const platformValue = $(`<div>${origData[1]}</div>`).find('.platform').text().toLowerCase();
+
+                if ($checkboxesCheckedCategory.length) {
+                    let categoryFilter = false;
+
+                    for(let i = 0; i < $checkboxesCheckedCategory.length; i++) {
+                        const name = $checkboxesCheckedCategory.eq(i).attr('name').toLowerCase();
+
+                        if (categoryValue.indexOf(name) >= 0) categoryFilter = true;
+                    }
+
+                    if (!categoryFilter) return false;
+                }
+
+                if ($checkboxesCheckedPlatform.length) {
+                    let platformFilter = false;
+
+                    for(let i = 0; i < $checkboxesCheckedPlatform.length; i++) {
+                        const name = $checkboxesCheckedPlatform.eq(i).attr('name').toLowerCase();
+
+                        if (platformValue.indexOf(name) >= 0) platformFilter = true;
+                    }
+
+                    if (!platformFilter) return false;
+                }
+
+                return true;
             });
         })();
     })();
