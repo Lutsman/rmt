@@ -13,7 +13,10 @@
     background-color: $dark-background-color;
     border: none;
     resize: none;
-    //overflow-y: auto;
+
+    &_small {
+      height: 130px;
+    }
   }
 
   &__controls {
