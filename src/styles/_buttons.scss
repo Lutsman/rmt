@@ -12,7 +12,7 @@
     box-shadow: none;
   }
 
-  &:hover {
+  &:hover, &.active {
     transform: scale(1.2);
   }
 
