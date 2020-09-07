@@ -71,7 +71,46 @@ $(document).ready(function() {
     //datatable
     (() => {
         const $table = $('.table-datatable');
-        const tableInst = $table.DataTable && $table.DataTable();
+        const $table404 = $('.table-datatable-404');
+        const formatingData = (data, type) => type == "sort" || type == "type" ? parseFloat(data) : data;
+        const options = {
+            "columnDefs": [
+                {
+                    targets: [2],
+                    render: formatingData,
+                },
+                {
+                    targets: [3],
+                    render: formatingData,
+                },
+                {
+                    targets: [4],
+                    render: formatingData,
+                },
+                {
+                    targets: [5],
+                    render: formatingData,
+                },
+            ],
+        };
+        const options404 = {
+            "columnDefs": [
+                {
+                    targets: [2],
+                    render: formatingData,
+                },
+                {
+                    targets: [3],
+                    render: formatingData,
+                },
+                {
+                    targets: [4],
+                    render: formatingData,
+                },
+            ],
+        };
+
+        const tableInst = $table.length > 0 ? $table.DataTable && $table.DataTable(options) : $table404.DataTable && $table404.DataTable(options404);
 
         // search input
         (() => {
