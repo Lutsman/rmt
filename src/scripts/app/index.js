@@ -72,7 +72,15 @@ $(document).ready(function() {
     (() => {
         const $table = $('.table-datatable');
         const $table404 = $('.table-datatable-404');
-        const formatingData = (data, type) => type == "sort" || type == "type" ? parseFloat(data) : data;
+        const htmlRegex = new RegExp(/<[^>]*>/, 'g');
+        const formatingData = (data, type) => {
+            if (type == "sort" || type == "type") {
+                const parsedData = typeof data === 'string' ? data.replace(htmlRegex, '') : data;
+                return  parseFloat(parsedData);
+            }
+
+            return  data;
+        };
         const options = {
             "columnDefs": [
                 {
