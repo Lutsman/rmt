@@ -45,6 +45,33 @@
   }
 }
 
+.btn-outline-primary {
+  color: $primary-color;
+  border: 1px solid $primary-color;
+
+  &:hover {
+    color: #fff;
+    background-color: $primary-color;
+    border-color: $primary-color;
+  }
+
+  &:hover, &.active {
+    transform: none;
+  }
+
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active,
+  .show > &.dropdown-toggle {
+    color: #fff;
+    background-color: $primary-color;
+    border-color: $primary-color;
+
+    &:focus, &.focus {
+      box-shadow: none;
+    }
+  }
+}
+
 .btn-secondary {
   color: $global-font-color;
   background-color: $secondary-color;
@@ -54,6 +81,33 @@
     color: #fff;
     background-color: lighten($secondary-color, 15%);
     border-color: lighten($secondary-color, 15%);
+  }
+
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active,
+  .show > &.dropdown-toggle {
+    color: #fff;
+    background-color: $secondary-color;
+    border-color: $secondary-color;
+
+    &:focus, &.focus {
+      box-shadow: none;
+    }
+  }
+}
+
+.btn-outline-secondary {
+  color: $secondary-color;
+  border: 1px solid $secondary-color;
+
+  &:hover {
+    color: #fff;
+    background-color: $secondary-color;
+    border-color: $secondary-color;
+  }
+
+  &:hover, &.active {
+    transform: none;
   }
 
   &:not(:disabled):not(.disabled):active,
@@ -93,6 +147,33 @@
   }
 }
 
+.btn-outline-info {
+  color: $info-color;
+  border: 1px solid $info-color;
+
+  &:hover {
+    color: #fff;
+    background-color: $info-color;
+    border-color: $info-color;
+  }
+
+  &:hover, &.active {
+    transform: none;
+  }
+
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active,
+  .show > &.dropdown-toggle {
+    color: #fff;
+    background-color: $info-color;
+    border-color: $info-color;
+
+    &:focus, &.focus {
+      box-shadow: none;
+    }
+  }
+}
+
 .btn-success {
   color: $global-font-color;
   background-color: $success-color;
@@ -117,6 +198,33 @@
   }
 }
 
+.btn-outline-success {
+  color: $success-color;
+  border: 1px solid $success-color;
+
+  &:hover {
+    color: #fff;
+    background-color: $success-color;
+    border-color: $success-color;
+  }
+
+  &:hover, &.active {
+    transform: none;
+  }
+
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active,
+  .show > &.dropdown-toggle {
+    color: #fff;
+    background-color: $success-color;
+    border-color: $success-color;
+
+    &:focus, &.focus {
+      box-shadow: none;
+    }
+  }
+}
+
 .btn-danger {
   color: $global-font-color;
   background-color: $danger-color;
@@ -126,6 +234,33 @@
     color: #fff;
     background-color: lighten($danger-color, 15%);
     border-color: lighten($danger-color, 15%);
+  }
+
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active,
+  .show > &.dropdown-toggle {
+    color: #fff;
+    background-color: $danger-color;
+    border-color: $danger-color;
+
+    &:focus, &.focus {
+      box-shadow: none;
+    }
+  }
+}
+
+.btn-outline-danger {
+  color: $danger-color;
+  border: 1px solid $danger-color;
+
+  &:hover {
+    color: #fff;
+    background-color: $danger-color;
+    border-color: $danger-color;
+  }
+
+  &:hover, &.active {
+    transform: none;
   }
 
   &:not(:disabled):not(.disabled):active,
