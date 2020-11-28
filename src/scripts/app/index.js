@@ -4,7 +4,7 @@ $(document).ready(function () {
    // slider
   (() => {
     const options = {
-        slidesToShow: 1,
+        //autoplay: true,
         dots: true,
     };
     const $slider = $('.single-item').slick(options);
