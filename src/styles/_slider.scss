@@ -21,7 +21,7 @@
   }
   max-height: 450px;
   padding: 15px;
-  text-shadow: 3px 3px 4px rgba($color: #ffffff, $alpha: 0.2);
+  text-shadow: 3px 3px 4px rgba($color: #ffffff, $alpha: 0.35);
   &__description {
     &_title {
       color: $secondary-color;
@@ -97,6 +97,9 @@
   font-size: 25px;
 }
 @media (max-width: 995px) {
+  .slider h3 {
+    font-size: 15px;
+  }
   .slick-dots {
     display: none;
   }
@@ -148,7 +151,10 @@
     width: 100%;
   }
 }
-@media (max-width: 300px) {
+@media (max-width: 350px) {
+  .slider h3 {
+    font-size: 10px;
+  }
   .slider__description {
     top: calc(63%);
     width: 70%;
