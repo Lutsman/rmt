@@ -4,29 +4,10 @@ $(document).ready(function () {
    // slider
   (() => {
     const options = {
-      slidesToShow: 4,
-      responsive: [
-        {
-          breakpoint: 1024,
-          settings: {
-            slidesToShow: 3,
-          }
-        },
-        {
-          breakpoint: 700,
-          settings: {
-            slidesToShow: 2,
-          }
-        },
-        {
-          breakpoint: 400,
-          settings: {
-            slidesToShow: 1,
-          }
-        },
-      ],
+        slidesToShow: 1,
+        dots: true,
     };
-    const $slider = $('.slider__body').slick(options);
+    const $slider = $('.single-item').slick(options);
   })();
     //chart
     (() => {
