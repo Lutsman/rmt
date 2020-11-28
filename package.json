@@ -17,7 +17,8 @@
     "datatables.net": "^1.10.21",
     "datatables.net-dt": "^1.10.21",
     "jquery": "^3.3.1",
-    "select2": "^4.0.6-rc.1"
+    "select2": "^4.0.6-rc.1",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "autoprefixer": "^9.8.4",

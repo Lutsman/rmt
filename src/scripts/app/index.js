@@ -1,6 +1,8 @@
 import Chart from 'chart.js';
 
-$(document).ready(function() {
+$(document).ready(function () {
+    // slider
+  $('.single-item').slick();
     //chart
     (() => {
         const $chartEl = $('.chart');
