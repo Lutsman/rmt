@@ -174,6 +174,26 @@
             <div class="table__filter filter collapse" id="tableFilter">
               <div class="card card-body">
                 <div class="row mb-2 filter-category">
+                  <div class="col-auto">
+                    <label class="checkbox">
+                      <input class="checkbox__input" type="checkbox" name="currentList">
+                      <svg class="icon checkbox__icon" aria-hidden="true">
+                        <use xlink:href="./images/sprite.svg#check"></use>
+                      </svg>
+                      <span>Актуальный список</span>
+                    </label>
+                  </div>
+                  <div class="col-auto">
+                    <label class="checkbox">
+                      <input class="checkbox__input" type="checkbox" name="notNecessary">
+                      <svg class="icon checkbox__icon" aria-hidden="true">
+                        <use xlink:href="./images/sprite.svg#check"></use>
+                      </svg>
+                      <span>Временно не нужно</span>
+                    </label>
+                  </div>
+                  </div>
+                <div class="row mb-2 filter-category">
                   <div class="col-auto">Категория:</div>
                   <div class="col-auto">
                     <label class="checkbox">
@@ -319,6 +339,28 @@
                     </label>
                   </div>
                 </div>
+                <p class="additionally">Дополнительно:</p>
+                <div class="row filter-category">
+                  <div class="col-6 col-sm-4">
+                    <label>
+                      <span>Выплата от</span>
+                      <input class="input-numbers" type="text" value="1" name="pay">
+                    </label>
+                  </div>
+                  <div class="col-6 col-sm-4">
+                    <label>
+                      <span>Стоимость от</span>
+                      <input class="input-numbers" type="text" value="1" name="cost">
+                    </label>
+                  </div>
+                  <div class="col-6 col-sm-4">
+                    <label>
+                      <span>Процент от</span>
+                      <input class="input-numbers" type="text" value="1" name="percent">
+                    </label>
+                  </div>
+                </div>
+                <button type="button" class="filter-button">Сбросить всё</button>
                 <button class="btn filter__close collapsed" type="button" href="#tableFilter" role="button" aria-expanded="false" aria-controls="tableFilter">
                   <svg class="icon filter__icon" aria-hidden="true">
                     <use xlink:href="./images/sprite.svg#close"></use>
@@ -414,11 +456,13 @@
                     </svg>
                     <div class="d-none icon-id">2</div>
                   </td>
-                  <td class="table__title">
+                  <td class="table__title table__title-wrong">
                     Assassin's Creed Unity Uplay Key GLOBAL
+                    <button class="table__title_pause btn-primary">Пауза</button>
                     <div class="d-none category">gift</div>
                     <div class="d-none platform">Battle.net</div>
                   </td>
+                  
                   <td>12</td>
                   <td><span class="currency currency-USD">7,20 USD</span>
                   <span class="currency currency-EUR d-none">6,09 EUR</span>
@@ -451,8 +495,8 @@
                     </svg>
                     <div class="d-none icon-id">4</div>
                   </td>
-                  <td class="table__title">
-                    World of Warcraft: Shadowlands Complete Collection (Heroic Edition) - Battle.net Key - NORTH AMERICA
+                  <td class="table__title table__title-wrong">
+                    World of Warcraft: Shadowlands Complete Collection (Heroic Edition) - Battle.net Key - NORTH AMERICA<button class="table__title_pause btn-primary">Пауза</button>
                     <div class="d-none category">key</div>
                     <div class="d-none platform">EpicGames</div>
                   </td>

@@ -1,3 +1,14 @@
+.table__title-wrong {
+  text-decoration: line-through;
+}
+.table__title_pause {
+  border-radius: 5px;
+  background-color: rgb(216, 44, 207);
+  border: none;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
 .table-box {
   position: relative;
   padding: 20px;
@@ -10,7 +21,8 @@
   text-align: center;
   border-bottom: 1px solid $global-background-color;
 
-  td, th {
+  td,
+  th {
     padding: 10px;
     vertical-align: middle;
 
@@ -52,7 +64,6 @@
   }
 
   &__dropdown {
-
     .dropdown-toggle {
       display: flex;
       justify-content: space-between;
@@ -85,7 +96,7 @@
     }
 
     .dropdown-item {
-      padding: 4px .75rem;
+      padding: 4px 0.75rem;
       color: $global-font-color;
 
       &:hover {
@@ -98,7 +109,7 @@
   .sorting,
   .sorting_asc,
   .sorting_desc {
-    transition: all .2s ease-in-out;
+    transition: all 0.2s ease-in-out;
     cursor: pointer;
 
     &:hover {
@@ -114,7 +125,6 @@
     display: none;
   }
 
-
   .sorting_asc {
     .icon-up {
       display: none;
@@ -127,7 +137,6 @@
 }
 
 .dataTables {
-
   &_length,
   &_filter,
   &_info {
@@ -172,7 +181,6 @@
 }
 
 @media (min-width: $breakpoint-lg) {
-
   .table thead th {
     font-size: 16px;
   }
@@ -189,7 +197,6 @@
 }
 
 @media (min-width: $breakpoint-xl) {
-
   .table__blank {
     width: 440px;
   }
