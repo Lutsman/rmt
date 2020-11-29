@@ -5,6 +5,7 @@
 }
 .slider {
   &__link {
+    color: white;
     background-color: #ff6781;
     outline: none;
     border: none;
@@ -21,7 +22,7 @@
   }
   max-height: 450px;
   padding: 15px;
-  text-shadow: 3px 3px 4px rgba($color: #ffffff, $alpha: 0.35);
+  text-shadow: 3px 3px 4px rgba($color: #ffffff, $alpha: 0.3);
   &__description {
     &_title {
       color: $secondary-color;
@@ -114,7 +115,6 @@
     z-index: 2;
   }
   .slider__link {
-    opacity: 2;
     font-size: 10px;
     line-height: 1;
     width: auto;
@@ -125,9 +125,8 @@
   .slider__description {
     padding: 0;
     background-color: transparent;
-    transform: translate(-50%);
-    left: 50%;
-    top: calc(80%);
+    right: 0;
+    top: -15px;
     margin: 0;
     li {
       display: none;
@@ -141,10 +140,6 @@
   }
 }
 @media (max-width: 500px) {
-  .slider__description {
-    top: calc(73%);
-    width: 50%;
-  }
   .slider__link {
     padding-top: 5px;
     padding-bottom: 5px;
@@ -156,7 +151,9 @@
     font-size: 10px;
   }
   .slider__description {
-    top: calc(63%);
     width: 70%;
+    top: 65%;
+    left: 0;
+    opacity: 0.8;
   }
 }
