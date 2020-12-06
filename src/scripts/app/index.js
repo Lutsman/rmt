@@ -1,14 +1,20 @@
 import Chart from 'chart.js';
+import 'slick-carousel';
 
 $(document).ready(function () {
-   // slider
-  (() => {
-    const options = {
-        //autoplay: true,
-        dots: true,
-    };
-    const $slider = $('.single-item').slick(options);
-  })();
+    // slider
+    (() => {
+        const $container = $('.single-item');
+
+        if (!$container.length) return;
+
+        const options = {
+            //autoplay: true,
+            dots: true,
+        };
+        const $slider = $('.single-item').slick(options);
+    })();
+
     //chart
     (() => {
         const $chartEl = $('.chart');
@@ -82,7 +88,7 @@ $(document).ready(function () {
         const $table404 = $('.table-datatable-404');
         const htmlRegex = new RegExp(/<[^>]*>/, 'g');
         const formatingData = (data, type) => {
-            if (type == "sort" || type == "type") {
+            if (type === 'sort' || type === 'type') {
                 const parsedData = typeof data === 'string' ? data.replace(htmlRegex, '') : data;
                 return  parseFloat(parsedData);
             }
@@ -168,6 +174,12 @@ $(document).ready(function () {
 
             const $filterPane = $($tableFilterBtn.attr('data-target'));
             const $closeBtn = $filterPane.find('.filter__close');
+            const $resetFiltersBtn = $filterPane.find('.reset-filters');
+            const $filterRewardFrom = $filterPane.find('.filter-reward-from');
+            const $filterPriceFrom = $filterPane.find('.filter-price-from');
+            const $filterPercentFrom = $filterPane.find('.filter-percent-from');
+            const $currencyList = $('.currency-list');
+            const $filtersFromInputs = $filterPane.find('.filter-from input');
 
             $closeBtn.on('click', () => {
                 $filterPane.slideUp();
@@ -183,6 +195,23 @@ $(document).ready(function () {
             $filterPane.on('click', 'label.checkbox', () => {
                 tableInst.draw();
             });
+
+            $filterPane.on('input', '.filter-from input', () => {
+                tableInst.draw();
+            });
+
+            $resetFiltersBtn.on('click', () => {
+                const $checked = $filterPane.find('input[type="checkbox"]:checked');
+                $filtersFromInputs.val(0);
+                $checked.attr('checked', false);
+                tableInst.draw();
+            });
+
+            const getActiveCurrencySelector = () => {
+                const currentCurrency = $currencyList.find('.active').text().toUpperCase();
+
+                return `.currency-${currentCurrency}`;
+            };
 
             $.fn.dataTable.ext.search.push((settings, data, i, origData) => {
                 const $checkboxesCheckedCategory = $filterPane.find('.filter-category input[type="checkbox"]:checked');
@@ -212,6 +241,26 @@ $(document).ready(function () {
                     }
 
                     if (!platformFilter) return false;
+                }
+
+                if ($filterRewardFrom.val() > 0) {
+                    const $cell = $(`<div>${origData[3]}</div>`);
+                    const currencyAmmount = parseFloat($cell.find(getActiveCurrencySelector()).text());
+
+                    if ($filterRewardFrom.val() > currencyAmmount) return false;
+                }
+
+                if ($filterPriceFrom.val() > 0) {
+                    const $cell = $(`<div>${origData[5]}</div>`);
+                    const currencyAmmount = parseFloat($cell.find(getActiveCurrencySelector()).text());
+
+                    if ($filterPriceFrom.val() > currencyAmmount) return false;
+                }
+
+                if ($filterPercentFrom.val() > 0) {
+                    const currencyAmmount = parseFloat(origData[4]);
+
+                    if ($filterPercentFrom.val() > currencyAmmount) return false;
                 }
 
                 return true;

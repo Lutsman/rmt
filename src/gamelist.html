@@ -166,7 +166,7 @@
                   </button>
                 </div>
               </div>
-              <ul class="nav nav-list">
+              <ul class="nav nav-list currency-list">
                 <li class="nav-list__item">
                   <a href="" class="btn btn-outline-secondary text-uppercase active">eur</a>
                 </li>
@@ -352,27 +352,30 @@
                   </div>
                 </div>
                 <p class="additionally">Дополнительно:</p>
-                <div class="row filter-category">
+                <div class="row filter-from">
                   <div class="col-6 col-sm-4">
                     <label>
                       <span>Выплата от</span>
-                      <input class="input-numbers" type="text" value="1" name="pay">
+                      <input class="input-numbers filter-reward-from" type="text" value="0"
+                             name="reward">
                     </label>
                   </div>
                   <div class="col-6 col-sm-4">
                     <label>
                       <span>Стоимость от</span>
-                      <input class="input-numbers" type="text" value="1" name="cost">
+                      <input class="input-numbers filter-price-from" type="text" value="0"
+                             name="price">
                     </label>
                   </div>
                   <div class="col-6 col-sm-4">
                     <label>
                       <span>Процент от</span>
-                      <input class="input-numbers" type="text" value="1" name="percent">
+                      <input class="input-numbers filter-percent-from" type="text" value="0"
+                             name="percent">
                     </label>
                   </div>
                 </div>
-                <button type="button" class="filter-button">Сбросить всё</button>
+                <button type="button" class="reset-filters filter-button">Сбросить всё</button>
                 <button class="btn filter__close collapsed" type="button" href="#tableFilter" role="button" aria-expanded="false" aria-controls="tableFilter">
                   <svg class="icon filter__icon" aria-hidden="true">
                     <use xlink:href="./images/sprite.svg#close"></use>
@@ -1570,6 +1573,7 @@
   integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
   crossorigin="anonymous"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.21/datatables.min.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
 </body>
 </html>
