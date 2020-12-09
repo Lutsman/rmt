@@ -230,13 +230,48 @@ justify-content: space-between;
   }
 }
 @media (max-width: 320px) {
+  .slider__description h3 {
+    font-size: 20px;
+  }
+
+  .slider__description_title {
+    font-size: 20px;
+  }
   .slider__link {
     font-size: 10px;
   }
-
+.slider__description_cost {
+  font-size: 10px;
+}
+.slider__description_percent {
+  font-size: 10px;
+}
+.slider__link {
+  font-size: 10px;
+}
 }
 div .slider__description {
 padding: 50px;
 
+}
+@media (max-width: 280px) {
+  .slider__description h3 {
+  font-size: 15px;
+}
 
+.slider__description_title {
+  font-size: 15px;
+}
+.slider__link {
+  font-size: 10px;
+}
+.slider__description_cost {
+font-size: 10px;
+}
+.slider__description_percent {
+font-size: 10px;
+}
+.slider__link {
+  font-size: 10px;
+}
 }
