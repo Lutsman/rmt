@@ -12,9 +12,7 @@
     box-shadow: none;
   }
 
-  &:hover, &.active {
-    transform: scale(1.2);
-  }
+ 
 
   &_size_large {
     line-height: 32px;
@@ -28,8 +26,8 @@
 
   &:hover {
     color: #fff;
-    background-color: lighten($primary-color, 15%);
-    border-color: lighten($primary-color, 15%);
+    background-color: darken(#c73333, 15%);
+    border-color: darken(#c73333, 15%);
   }
 
   &:not(:disabled):not(.disabled):active,
