@@ -3,21 +3,22 @@
     position: absolute;
     font-size: 25px;
     letter-spacing: 4px;
-    left: -552px;
-    top: -55px;
+    left: -610px;
+    top: -50px;
   }
 }
 @media screen and (min-width: 996px) and (max-width: 1200px) {
   .slider__title {
     position: absolute;
-    font-size: 40px;
-    left: -365px;
-    top: -55px;
+    font-size: 25px;
+    letter-spacing: 4px;
+    left: -430px;
+    top: -50px;
   }
 }
 
 .slick-slide img {
-  max-height: 450px;
+  max-height: 400px;
   display: block;
   min-width: 100%;
 }
@@ -26,13 +27,13 @@
     color: white;
     outline: none;
     border: none;
-    font-size: 20px;
+    font-size: 14px;
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 80%;
     text-align: center;
-    margin-top: 25px;
+    margin-top: 20px;
     text-transform: uppercase;
     padding: 10px;
     cursor: pointer;
@@ -41,11 +42,13 @@
   padding: 15px;
 
   &__description {
+    line-height: 15px;
     text-shadow: 3px 3px 4px rgba($color: #ffffff, $alpha: 0.3);
     &_title {
       color: $secondary-color;
       text-align: center;
-      font-size: 25px;
+      font-size: 18px;
+      line-height: 15px;
 
       margin-bottom: 20px;
     }
@@ -53,11 +56,11 @@
       margin-bottom: 10px;
     }
     padding: 15px;
-    font-size: 18px;
+    font-size: 16px;
     background-color: rgba($color: #000000, $alpha: 0.65);
     position: absolute;
     top: 15%;
-    right: 20px;
+    right: 55px;
     list-style: none;
   }
   &__wrapper {
@@ -86,7 +89,7 @@
 }
 
 .slick-prev {
-  top: calc(100% - 10px);
+  top: calc(100% - 45px);
   left: 25px;
   z-index: 2;
   &::before {
@@ -94,7 +97,7 @@
   }
 }
 .slick-next {
-  top: calc(100% - 10px);
+  top: calc(100% - 45px);
   right: 25px;
   z-index: 2;
   &::before {
@@ -112,7 +115,7 @@
   font-size: 10px;
 }
 .slick-dots {
-  bottom: -10px;
+  bottom: 25px;
 }
 .slick-prev:before {
   content: "\2039";
@@ -155,8 +158,8 @@
     width: 30px;
     height: 30px;
     background-color: black;
-    left: 25px;
-    top: 100%;
+    left: 32px;
+    top: calc(100% - 43px);
     z-index: 2;
     &::before {
       position: relative;
@@ -174,8 +177,8 @@
     width: 30px;
     height: 30px;
     background-color: black;
-    right: 25px;
-    top: calc(100% + 2px);
+    right: 32px;
+    top: calc(100% - 42px);
     z-index: 2;
     &::before {
       position: relative;
@@ -188,7 +191,7 @@
     padding-left: 5px !important;
     padding-right: 5px !important;
     margin-left: 0;
-    font-size: 20px;
+    font-size: 14px;
     line-height: 1;
     width: auto;
     padding: 0;
@@ -223,9 +226,6 @@
     display: flex;
     justify-content: space-between;
   }
-  .slider__link {
-    font-size: 15px;
-  }
 }
 @media (max-width: 320px) {
   .slider__description h3 {
@@ -249,7 +249,10 @@
   }
 }
 div .slider__description {
-  padding: 50px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 @media (max-width: 280px) {
   .slider__description h3 {
