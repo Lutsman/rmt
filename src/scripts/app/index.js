@@ -9,7 +9,6 @@ $(document).ready(function () {
         if (!$container.length) return;
 
         const options = {
-            //autoplay: true,
             dots: true,
             draggable: false,
         };
@@ -220,6 +219,20 @@ $(document).ready(function () {
                 const $checkboxesCheckedPlatform = $filterPane.find('.filter-platform input[type="checkbox"]:checked');
                 const categoryValue = $(`<div>${origData[1]}</div>`).find('.category').text().toLowerCase();
                 const platformValue = $(`<div>${origData[1]}</div>`).find('.platform').text().toLowerCase();
+                const filterCell = ($filterInput, cellNumber) => {
+                    if ($filterInput.val() <= 0) {
+                        return false;
+                    }
+
+                    const $cell = $(`<div>${origData[cellNumber]}</div>`);
+                    const $curentCurrency = $cell.find(getActiveCurrencySelector());
+                    const currencyAmmount = $curentCurrency.length ?
+                      parseFloat($cell.find(getActiveCurrencySelector()).text()) :
+                      parseFloat($cell.text());
+
+                    return $filterInput.val() > currencyAmmount;
+                };
+
 
                 if ($checkboxesCheckedCategory.length) {
                     let categoryFilter = false;
@@ -245,24 +258,16 @@ $(document).ready(function () {
                     if (!platformFilter) return false;
                 }
 
-                if ($filterRewardFrom.val() > 0) {
-                    const $cell = $(`<div>${origData[3]}</div>`);
-                    const currencyAmmount = parseFloat($cell.find(getActiveCurrencySelector()).text());
-
-                    if ($filterRewardFrom.val() > currencyAmmount) return false;
+                if (filterCell($filterRewardFrom, 3)) {
+                    return false;
                 }
 
-                if ($filterPriceFrom.val() > 0) {
-                    const $cell = $(`<div>${origData[5]}</div>`);
-                    const currencyAmmount = parseFloat($cell.find(getActiveCurrencySelector()).text());
-
-                    if ($filterPriceFrom.val() > currencyAmmount) return false;
+                if (filterCell($filterPriceFrom, 5)) {
+                    return false;
                 }
 
-                if ($filterPercentFrom.val() > 0) {
-                    const currencyAmmount = parseFloat(origData[4]);
-
-                    if ($filterPercentFrom.val() > currencyAmmount) return false;
+                if (filterCell($filterPercentFrom, 4)) {
+                    return false;
                 }
 
                 return true;
