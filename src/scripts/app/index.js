@@ -11,8 +11,10 @@ $(document).ready(function () {
         const options = {
             //autoplay: true,
             dots: true,
+            draggable: false,
         };
-        const $slider = $('.single-item').slick(options);
+
+        $container.slick(options);
     })();
 
     //chart

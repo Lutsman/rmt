@@ -5,4 +5,4 @@ import './bootstrap';
 // import './select2';
 // import './jQueryExport';
 // import './datatables';
-import './slick';
+import './slick/slick';
