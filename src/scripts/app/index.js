@@ -181,6 +181,8 @@ $(document).ready(function () {
             const $filterPercentFrom = $filterPane.find('.filter-percent-from');
             const $currencyList = $('.currency-list');
             const $filtersFromInputs = $filterPane.find('.filter-from input');
+            const $currentListFilter = $filterPane.find('.checkbox__input[name="currentList"]');
+            const $notNecessaryFilter = $filterPane.find('.checkbox__input[name="notNecessary"]');
 
             $closeBtn.on('click', () => {
                 $filterPane.slideUp();
@@ -232,7 +234,18 @@ $(document).ready(function () {
 
                     return $filterInput.val() > currencyAmmount;
                 };
+                const filterNotActual = () => {
+                    const $cell = $(`<div>${origData[1]}</div>`);
+                    const isChecked = $notNecessaryFilter.prop('checked');
 
+                    return !isChecked && $cell.find('.table__title_pause').length > 0;
+                };
+                const filterActual = () => {
+                    const $cell = $(`<div>${origData[1]}</div>`);
+                    const isChecked = $currentListFilter.prop('checked');
+
+                    return !isChecked && $cell.find('.table__title_pause').length === 0;
+                };
 
                 if ($checkboxesCheckedCategory.length) {
                     let categoryFilter = false;
@@ -267,6 +280,14 @@ $(document).ready(function () {
                 }
 
                 if (filterCell($filterPercentFrom, 4)) {
+                    return false;
+                }
+
+                if (filterActual()) {
+                    return false;
+                }
+
+                if (filterNotActual()) {
                     return false;
                 }
 
