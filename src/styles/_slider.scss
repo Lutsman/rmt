@@ -5,8 +5,24 @@
     letter-spacing: 4px;
     left: -610px;
     top: -50px;
+    text-shadow: 2px 3px 3px rgba(255, 255, 255, 0.6);
+    background-color: rgba(0,0,0, 0.2);
+    
   }
+  .slick-dots {
+    bottom: 35px;
+    left: -5px;
+  }
+  .slick-next {
+    top: calc(100% - 55px);
+    right: 25px;
+    z-index: 2;}
+    .slick-prev {
+      top: calc(100% - 55px);
+      left: 25px;
+      z-index: 2;}
 }
+
 
 @media screen and (min-width: 990px) and (max-width: 1199px) {
   .slider__title {
@@ -15,6 +31,8 @@
     letter-spacing: 4px;
     left: -430px;
     top: -50px;
+    text-shadow: 2px 3px 3px rgba(255, 255, 255, 0.6);
+    background-color: rgba(0,0,0, 0.2);
   }
 }
 
@@ -89,7 +107,7 @@
 }
 
 .slick-prev {
-  top: calc(100% - 45px);
+  top: calc(100% - 65px);
   left: 25px;
   z-index: 2;
   &::before {
@@ -97,7 +115,7 @@
   }
 }
 .slick-next {
-  top: calc(100% - 45px);
+  top: calc(100% - 65px);
   right: 25px;
   z-index: 2;
   &::before {
@@ -115,7 +133,7 @@
   font-size: 10px;
 }
 .slick-dots {
-  bottom: 25px;
+  bottom: 45px;
   left: -10px;
 }
 .slick-prev:before {
@@ -170,6 +188,26 @@
     display: inline-block;
     margin-left: 10px;
   }
+  .slick-prev {
+    top: calc(100% - 45px);
+    left: 25px;
+    z-index: 2;
+    &::before {
+      font-size: 30px;
+    }
+  }
+  .slick-next {
+    top: calc(100% - 45px);
+    right: 25px;
+    z-index: 2;
+    &::before {
+      font-size: 30px;
+    }
+  }
+  .slick-dots {
+    bottom: 25px;
+    left: -10px;
+  }
 }
 
 
@@ -178,6 +216,26 @@
   div .slider__description{
     font-size: 14px;
     padding: 15px 20px;
+  }
+  .slick-prev {
+    top: calc(100% - 45px);
+    left: 25px;
+    z-index: 2;
+    &::before {
+      font-size: 30px;
+    }
+  }
+  .slick-next {
+    top: calc(100% - 45px);
+    right: 25px;
+    z-index: 2;
+    &::before {
+      font-size: 30px;
+    }
+  }
+  .slick-dots {
+    bottom: 25px;
+    left: -10px;
   }
   .slider__description_title {
     margin-bottom: 10px;
@@ -204,13 +262,15 @@
     display: none;
   }
   .slider__title {
-    
+    background-color: rgba(0,0,0, 0.2);
     letter-spacing: 4px;
     font-size: 20px;
     position: absolute;
     left: -325px;
     top: -40px;
+    text-shadow: 2px 3px 3px rgba(255, 255, 255, 0.6);
   }
+
 }
 @media screen and (min-width: 601px) and (max-width: 767px) {
   .slider__title {
@@ -218,6 +278,8 @@
     position: absolute;
     left: -155px;
     top: -30px;
+    background-color: rgba(0,0,0, 0.2);
+    text-shadow: 2px 3px 3px rgba(255, 255, 255, 0.6);
   }
   div .slider__description{
     font-size: 14px;

@@ -2,11 +2,13 @@
   text-decoration: line-through;
 }
 .table__title_pause {
+  display: inline-block;
   border-radius: 5px;
   background-color: rgb(216, 44, 207);
   border: none;
   margin-left: 10px;
   cursor: pointer;
+  text-decoration: none !important;
 }
 
 .table-box {
