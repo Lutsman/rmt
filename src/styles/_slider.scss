@@ -276,14 +276,16 @@
   .slider__title {
     font-size: 20px;
     position: absolute;
-    left: -155px;
-    top: -30px;
+    left: -205px;
+    top: 0;
     background-color: rgba(0,0,0, 0.2);
     text-shadow: 2px 3px 3px rgba(255, 255, 255, 0.6);
   }
   div .slider__description{
     font-size: 14px;
     padding: 15px 20px;
+    top: 10px;
+    right: 10px;
   }
   .slider__description_title {
     margin-bottom: 10px;
