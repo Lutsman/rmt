@@ -1,3 +1,4 @@
+// imports that could not be allocated to vendors
 import Chart from 'chart.js';
 import 'slick-carousel';
 

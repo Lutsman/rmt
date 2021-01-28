@@ -11,13 +11,9 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.2.5",
-    "@fortawesome/fontawesome-free": "^5.7.2",
     "bootstrap": "^4.5.0",
     "chart.js": "^2.9.3",
-    "datatables.net": "^1.10.21",
-    "datatables.net-dt": "^1.10.21",
     "jquery": "^3.3.1",
-    "select2": "^4.0.6-rc.1",
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
